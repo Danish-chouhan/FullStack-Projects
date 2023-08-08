@@ -21,7 +21,8 @@ app.post("/SignUp",async (req,res)=>{
 app.post("/Login",async(req,res)=>{
     try{
      const {email,password} = req.body;
-     await con.query("INSERT INTO Login(SrNO,UserName_NUMBER_Email,Password) VALUES(?,?,?)",[1,email,password])
+     const ancrypt = await bcrypt.hash(password,4) 
+     await con.query("INSERT INTO Login(UserName_NUMBER_Email,Password) VALUES(?,?)",[email,ancrypt])
      res.redirect("/SignUp")
     }catch(error){
         console.log(error);
