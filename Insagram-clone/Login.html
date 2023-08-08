@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/Login.css">
+    <!-- <link rel="stylesheet" href="./css/Login.css"> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,16 +18,118 @@
     />
     <title>[DIF] instagram</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+     @import url("https://fonts.googleapis.com/css2?family=Rowdies&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {    
+  font-family: "Rowdies", cursive;
+  background-color:#7d145cb7 ;
+}
+
+.main-container {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.587);
+  animation: blowing 1s ease-in-out;
+}
+@keyframes blowing {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    margin-right: 100%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+form input {
+  border: 1px solid rgba(255, 255, 255, 0.693);
+}
+form ::placeholder {
+  text-align: center;
+  color: white;
+}
+#submit {
+  border: 1px solid rgba(255, 255, 255, 0.148);
+  box-shadow: 2px 2px 5px black;
+}
+
+@media only screen and (max-width: 600px) {
+  /* header */
+
+  header {
+    height: 70px;
+  }
+  header h1 {
+    font-size: 20px;
+  }
+  header b {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+  }
+  header i {
+    padding-left: 10px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+  }
+
+  /* main */
+
+  .main-container {
+    background-color: transparent;
+    margin: 13% 0 10% 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+
+  #submit {
+    width: 120px;
+    height: 40px;
+  }
+ 
+  button img {
+    height: 19px;
+  }
+  .google {
+    font-size: 10px;
+  }
+
+
+form {
+  height: 400px;
+  width: 80%;
+}
+form input {
+  height: 50px;
+  width: 80%;
+  margin: 10px 0 20px 0;
+  background-color: transparent;
+  color: white;
+}
+form ::placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.575);
+}
+button {
+  width: 150px;
+}
+}
+    </style>
   </head>
   <body>
     <main class="flex justify-center items-center text-center mt-0 ml-3 mr-3 mb-0 h-full">
-      <div class="main-container bg-black w-2/5 mt-1 rounded-3xl h-2/4 text-white flex justify-center items-center flex-col">
+      <div class="main-container  w-2/5 mt-1 rounded-3xl h-2/4 text-white flex justify-center items-center flex-col">
         <img src="https://www.digitalinsightfoundation.org/_app/immutable/assets/dif_img.9be40b60.png" alt=""  class=" h-44 w-44 mt-1 -mb-10">
         <form action="" onsubmit="return validateForm()" class="flex flex-col h-80 w-11/12 mt-20 -mb-10 text-left">
           <label for="" id="valid1" class="">Email,username OR mobile number</label>
-          <input type="text" placeholder="Email,username OR mobile number" id="email"  autocomplete="off" class=" h-10 rounded-md w-full mt-2 mb-5 bg-transparent text-white pr-5 pl-5 pt-0 pb-0"/>
+          <input type="text" placeholder="Email,username OR mobile number" id="email" name="email"  autocomplete="off" class=" h-10 rounded-md w-full mt-2 mb-5 bg-transparent text-white pr-5 pl-5 pt-0 pb-0"/>
           <label for="" id="valid3">Password</label>
-          <input type="password" placeholder="Password" id="password" class=" h-10 rounded-md w-full mt-2 mb-5 bg-transparent text-white pr-5 pl-5 pt-0 pb-0" autocomplete="off"/>
+          <input type="password" placeholder="Password" id="password" name="password" class=" h-10 rounded-md w-full mt-2 mb-5 bg-transparent text-white pr-5 pl-5 pt-0 pb-0" autocomplete="off"/>
           <div class="flex items-center justify-center">
             <input type="submit" id="submit" class="h-10 rounded-md w-40 text-white hover:transition duration-300 ease-in-out hover:shadow-none hover:border-none hover:bg-red-500 bg-opacity-50" value="LogIn"/>
           </div>
@@ -50,5 +152,5 @@
       </div>
     </main>
   </body>
-  <script src="./js/Login.js"></script>
+  <!-- <script src="./js/Login.js"></script> -->
 </html>
