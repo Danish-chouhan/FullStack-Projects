@@ -11,7 +11,7 @@ app.post("/SignUp",async (req,res)=>{
      const {email,mobile,UserName,password} = req.body
      const ancrypt = await bcrypt.hash(password,4) 
      await con.query("INSERT INTO SignUp(Number_Email,FullName,UserName,Password) VALUES(?,?,?,?)",[email,mobile,UserName,ancrypt])
-     res.redirect("/Login")
+     res.redirect("/Instagram")
     }catch(error){
       console.log(error);
       res.statusCode(500).send("error accourd at SignUp")
@@ -23,7 +23,7 @@ app.post("/Login",async(req,res)=>{
      const {email,password} = req.body;
      const ancrypt = await bcrypt.hash(password,4) 
      await con.query("INSERT INTO Login(UserName_NUMBER_Email,Password) VALUES(?,?)",[email,ancrypt])
-     res.redirect("/SignUp")
+     res.redirect("/Instagram")
     }catch(error){
         console.log(error);
         res.statusCode(500).send("Error in Login")
@@ -32,4 +32,5 @@ app.post("/Login",async(req,res)=>{
 
 app.get("/Login",(req,res)=>res.sendFile(path.join(__dirname,"../FrontEnd/LOGIN/Login.html")))
 app.get("/SignUp",(req,res)=>res.sendFile(path.join(__dirname,"../FrontEnd/SIGNUP/SignUp.html")))
+app.get("/Instagram",(req,res)=>res.sendFile(path.join(__dirname,"../FrontEnd/INSTA-PAGE/Index.html")))
 app.listen(port,()=>console.log("working"))
