@@ -4,6 +4,7 @@ const body = document.querySelector("body");
 
 // created element
 
+
 // child element of Aside
 function mainContainerOfBody() {
   const divOfMainBody = document.createElement("div");
