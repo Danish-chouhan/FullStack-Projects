@@ -7,6 +7,7 @@ const bcrypt= require("bcrypt")
 const path= require("path")
 const app = express()
 const port = 11000
+const data = require("./Router/Data")
 
 app.use(express.urlencoded({extended : false}))
 app.use(express.static(path.join(__dirname,"Components")))
@@ -27,10 +28,10 @@ app.post("/",async (req,res)=>{
     res.redirect("/SuccesFullPage")
 })
 
-
+app.use("/Data",data)
 app.get("/:id",(req,res)=>{
     const dataFile = req.params.id
-    res.sendFile(path.join(__dirname,`./Components/html/${dataFile}`))
+    res.sendFile(path.join(__dirname,`./Components/html/${dataFile}`))  
 })
 
 
