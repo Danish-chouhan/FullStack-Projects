@@ -15,13 +15,25 @@ app.get("/", (req, res) => {
       const querys =
         "INSERT INTO Login(Email,Password) VALUES (?,?)";
       await connection.query(querys, [Email,encryptPass]);
-      res.redirect("/Sub");
+      res.redirect("/LoginData");
     } catch (error) {
       console.log(error);
       res.statusCode(500).send("error founded in Post");
     }
   });
   
+  app.get("/LoginData", async (req, res) => {
+    try {
+      const query = "SELECT id, Email, Password FROM Login";
+      const [rows] = await connection.execute(query); // Using execute for better results
+      
+  
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error occurred while fetching data");
+    }
+  });
   
 
 module.exports = app

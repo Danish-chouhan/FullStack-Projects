@@ -1,4 +1,4 @@
-const mysql = require("mysql")
+const mysql = require("mysql2")
 
 const con = mysql.createConnection({
     host : "localhost",
@@ -7,4 +7,4 @@ const con = mysql.createConnection({
     database : "SuperAdminLogin"
 })
 
-module.exports = con
+module.exports = con.promise()

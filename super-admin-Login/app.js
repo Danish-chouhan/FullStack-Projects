@@ -17,9 +17,12 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./Index.html"));
 });
 
-app.get("/Sub", (req, res) => {
-  res.send("wertyu");
+app.get("/LoginData", (req, res) => {
+  res.sendFile(path.join(__dirname,"./Components/DataTables/DataCheakerLogin.html"));
 });
+app.get("/SignUpData",(req,res)=>{
+  res.sendFile(path.join(__dirname,"./Components/DataTables/DataCheakerSignUp.html"))
+})
 
 app.listen(port, () => {
   console.log(`port is workingwertyu on ${port}`);
