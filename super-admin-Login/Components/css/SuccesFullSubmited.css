@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+}
+.MainContainer{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: rgb(0, 255, 38);
+    font-size: 4em;
+}
+i{
+    color: rgb(0, 255, 38);
+    font-size: 60px;
+}
+button{
+    margin-top: 30px;
+    height: 50px;
+    width: 200px;
+    background-color: teal;
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+button:hover{
+    filter: brightness(0.5);
+    transition: 0.2s ease-in-out;
+
+}
+button a{
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+}
+.buttonContainer{
+    display: flex;
+}

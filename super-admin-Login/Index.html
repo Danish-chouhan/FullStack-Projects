@@ -17,6 +17,12 @@
         align-items: center;
         height: 97vh;
       }
+      .buttonContainer{
+        display: flex; 
+        flex-wrap: wrap;
+        width: 500px;
+        justify-content: space-between;
+      }
       .MainContainer h1 {
         color: white;
         font-size: 40px;
@@ -36,13 +42,20 @@
         box-shadow: 0px 0px 10px white;
         transition: 0.2s ease-in-out;
       }
+      h2{
+        color: white;
+      }
     </style>
   </head>
   <body>
     <div class="MainContainer">
       <h1>Welcom To DIF Company</h1>
+      <div class="buttonContainer">
       <a href="Login"><button>Login</button></a>
       <a href="SignUp"><button>SignUp</button></a>
+    </div>
+    <h2>SignUp As A SuperAdmin</h2>
+    <a href="SuperAdminSignUp"><button>SignUp</button></a>
     </div>
   </body>
 </html>

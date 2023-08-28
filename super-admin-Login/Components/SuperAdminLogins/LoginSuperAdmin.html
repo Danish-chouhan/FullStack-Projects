@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Super Admin Login Page</title>
     <link rel="stylesheet" href="../css/Login.css">
 </head>
 <body>
     <div class="MainContainer">
-    <h1>Login To your Create Account</h1>
-    <form action="" method="Post">
+    <h1>Login To your Super Admin Account To see Datas</h1>
+    <form action="" method="Post" id="SuperAdminLoginForm">
+        <p id="valid1">Email</p>
         <input type="email" name="Email" id="EmailLogin" placeholder="Email">
+        <p id="valid2">Password</p>
         <input type="password" name="Password" id="PasswordLogin" placeholder="Password">
         <input type="submit" name="" id="">
     </form>
 </div>
 </body>
+<script src="../js/SuperAdminLogin.js"></script>
 </html>
