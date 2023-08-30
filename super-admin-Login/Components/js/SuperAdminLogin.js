@@ -1,50 +1,72 @@
-let NewArr;
+let StoringDataOfLogin;
 
-fetch("http://localhost:4000/SuperAdminSignUp/SuperAdminSignUpData")
+fetch("http://localhost:5000/SuperAdminSignUp/SuperAdminSignUpData")
   .then((response) => response.json())
   .then((data) => {
-    NewArr = data;
+    StoringDataOfLogin = data;
   })
   .catch((error) => {
     console.error("Error fetching data:", error);
   });
 
+// form Of Login
+
 const EmailOfLogin = document.getElementById("EmailLogin");
-const PasswordOfLogin = document.getElementById("PasswordLogin");
 let flag = 1;
 
 const validEmail = document.getElementById("valid1");
-const validPass = document.getElementById("valid2");
 
 const myForm = document.getElementById("SuperAdminLoginForm");
+const MainContainer = document.getElementById("MainContainer");
 
 myForm.addEventListener("submit", function (event) {
   event.preventDefault();
   validateForm();
 });
 
-function validateForm() {
+async function validateForm() {
+  // Login targets
+
   const providedEmail = EmailOfLogin.value;
-  const providedPassword = PasswordOfLogin.value;
-  const emailIncluded = NewArr.some((item) => item.Email === providedEmail);
-  const PasswordIncluded =  NewArr.some((item) => item.Password === providedPassword)
-  
+  const emailIncluded = StoringDataOfLogin.some(
+    (item) => item.Email === providedEmail
+  );
+
+  // signUP targets
+  const body = document.querySelector("body");
   if (EmailOfLogin.value == "") {
     validEmail.style.color = "red";
-  } else if (emailIncluded) {
+    validEmail.textContent = "Please Enter Your Email Here";
+  } else if (emailIncluded === false) {
     validEmail.style.color = "red";
+    validEmail.textContent = "Please Enter Registered Email";
   } else {
     validEmail.style.color = "green";
+    validEmail.textContent = "Email";
   }
 
-  if (PasswordOfLogin.value == "") {
-    validPass.style.color = "red";
-  } else if (PasswordIncluded) {
-    validPass.style.color = "red";
-  }else{
-    validPass.style.color = "green";
-  }
+  if (validEmail.style.color === "green") {
+    MainContainer.remove();
 
-  const greenvalid =
-    validEmail.style.color === "green" && validPass.style.color === "green";
+    const ContainerOfButtons = document.createElement("div");
+    ContainerOfButtons.setAttribute("id", "ContainerOfButtons");
+
+    const Titel = document.createElement("h1");
+    const LoginDatas = document.createElement("a");
+    const SignUpDatas = document.createElement("a");
+    const SuperAdminDatas = document.createElement("a");
+    Titel.textContent = "Now Select Which Data You Want";
+    LoginDatas.setAttribute("href", "LoginData");
+    SignUpDatas.setAttribute("href", "SignUpData");
+    SuperAdminDatas.setAttribute("href", "SuperAdminSignUpData");
+
+    LoginDatas.textContent = "Login Data";
+    SignUpDatas.textContent = " SignUp Data";
+    SuperAdminDatas.textContent = "Super Admin Data";
+    ContainerOfButtons.appendChild(Titel);
+    ContainerOfButtons.appendChild(LoginDatas);
+    ContainerOfButtons.appendChild(SignUpDatas);
+    ContainerOfButtons.appendChild(SuperAdminDatas);
+    body.appendChild(ContainerOfButtons);
+  }
 }

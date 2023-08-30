@@ -1,21 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SignUp Page</title>
-    <link rel="stylesheet" href="../css/Login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/Login.css" />
+  </head>
+  <body>
     <div class="MainContainer">
-    <h1>SignUp To your Create Account</h1>
-    <form action="" method="Post">
-        <input type="text" name="FullName" id="FullNameSignUp" placeholder="FullName">
-        <input type="email" name="Email" id="EmailSignUp" placeholder="Email">
-        <input type="text" name="Number" id="NumberSignUp" placeholder="Number">
-        <input type="password" name="Password" id="PasswordSignUp" placeholder="Password">
-        <input type="submit" name="" id="">
-    </form>
-</div>
-</body>
+      <h1>SignUp To your Create Account</h1>
+      <form action="" method="Post" id="Loginform">
+        <label id="FullName">FullName</label>
+        <input
+          type="text"
+          name="FullName"
+          id="FullNameSignUp"
+          placeholder="FullName"
+        />
+        <label id="Email">Email</label>
+        <input type="email" name="Email" id="EmailSignUp" placeholder="Email" />
+        <label id="Number">Number</label>
+        <input
+          type="text"
+          name="Number"
+          id="NumberSignUp"
+          placeholder="Number"
+        />
+        <label id="Password">Password</label>
+        <input
+          type="password"
+          name="Password"
+          id="PasswordSignUp"
+          placeholder="Password"
+        />
+        <input type="submit" name="" id="" />
+      </form>
+    </div>
+  </body>
+  <script>
+    const FullName = document.getElementById("FullNameSignUp");
+    const Email = document.getElementById("EmailSignUp");
+    const Number = document.getElementById("NumberSignUp");
+    const Password = document.getElementById("PasswordSignUp");
+
+    const Valid1 = document.getElementById("FullName");
+    const Valid2 = document.getElementById("Email");
+    const Valid3 = document.getElementById("Number");
+    const Valid4 = document.getElementById("Password");
+
+    const Form = document.getElementById("Loginform");
+
+    Form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (FullName.value === "") {
+        Valid1.style.color = "red";
+        Valid1.textContent = "Please Enter Your FullName";
+      } else {
+        Valid1.style.color = "green";
+        Valid1.textContent = "FullName";
+      }
+      if (Email.value === "") {
+        Valid2.style.color = "red";
+        Valid2.textContent = "Please Enter Your Email";
+      } else {
+        Valid2.style.color = "green";
+        Valid2.textContent = "Email";
+      }      
+      if (Number.value === "") {
+        Valid3.style.color = "red";
+        Valid3.textContent = "Please Enter Your Number";
+      } else {
+        Valid3.style.color = "green";
+        Valid3.textContent = "Number";
+      }
+      if (Password.value === "") {
+        Valid4.style.color = "red";
+        Valid4.textContent = "Please Enter Your Password";
+      } else {
+        Valid4.style.color = "green";
+        Valid4.textContent = "Password";
+      }
+      if (Valid1.style.color === "green" && Valid2.style.color === "green" && Valid3.style.color === "green" && Valid4.style.color === "green") {
+        Form.submit();
+      }
+    });
+  </script>
 </html>

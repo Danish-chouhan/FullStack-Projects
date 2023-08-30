@@ -1,19 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel="stylesheet" href="../css/Login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/Login.css" />
+  </head>
+  <body>
     <div class="MainContainer">
-    <h1>Login To your Create Account</h1>
-    <form action="" method="Post">
-        <input type="email" name="Email" id="EmailLogin" placeholder="Email">
-        <input type="password" name="Password" id="PasswordLogin" placeholder="Password">
-        <input type="submit" name="" id="">
-    </form>
-</div>
-</body>
+      <h1>Login To your Create Account</h1>
+      <form action="" method="Post" id="Loginform">
+        <label id="Valid1">Email</label>
+        <input type="email" name="Email" id="EmailLogin" placeholder="Email" />
+        <label id="Valid2">Password</label>
+        <input
+          type="password"
+          name="Password"
+          id="PasswordLogin"
+          placeholder="Password"
+        />
+        <input type="submit" name="" id="" />
+      </form>
+    </div>
+  </body>
+  <script>
+    const Email = document.getElementById("EmailLogin");
+    const Password = document.getElementById("PasswordLogin");
+    
+    const Valid1 = document.getElementById("Valid1");
+    const Valid2 = document.getElementById("Valid2");
+
+    const Form = document.getElementById("Loginform");
+
+    Form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if(Email.value === ""){
+        Valid1.style.color = "red"
+        Valid1.textContent = "Please Enter Your Email"
+      }else{
+        Valid1.style.color = "green"
+        Valid1.textContent = "Email"
+      }
+
+      if(Password.value === ""){
+        Valid2.style.color = "red"
+        Valid2.textContent = "Please Enter Your Password"
+      }else{
+        Valid2.style.color = "green"
+        Valid2.textContent = "Password"
+      }
+      if(Valid1.style.color === "green" && Valid2.style.color === "green"){
+        Form.submit()
+      }
+     
+
+    });
+  </script>
 </html>

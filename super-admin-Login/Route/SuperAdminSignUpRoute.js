@@ -17,7 +17,7 @@ app.post("/", async (req, res) => {
     const querys =
       "insert into SuperAdminSignUp(FullName,Email,Number,Password) values(?,?,?,?)";
     await con.query(querys, [FullName, Email, Number, encryptPass]);
-    res.redirect("/SuperAdminSignUpData");
+    res.redirect("/SuccesFullSubmited");
   } catch (error) {
     console.log(error);
     res.statusCode(500).send("Error in Post");

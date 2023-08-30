@@ -1,11 +1,10 @@
 const tableBody = document.getElementById("tableBody");
 
-fetch("http://localhost:4000/SuperAdminSignUp/SuperAdminSignUpData")
+fetch("http://localhost:5000/SuperAdminSignUp/SuperAdminSignUpData")
   .then((ele) => ele.json())
   .then((data) => {
     data.forEach(item => {
-        
-   
+
     const raw = document.createElement("tr");
 
     for (const Property in item ) {
@@ -19,6 +18,8 @@ fetch("http://localhost:4000/SuperAdminSignUp/SuperAdminSignUpData")
     tableBody.appendChild(raw);
   })
 })
+
+
   .catch((error) => {
     console.log("Error While Fatchiing",error);
   });

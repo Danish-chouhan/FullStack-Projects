@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
       const querys =
         "INSERT INTO Login(Email,Password) VALUES (?,?)";
       await connection.query(querys, [Email,encryptPass]);
-      res.redirect("/LoginData");
+      res.redirect("/SuccesFullSubmited");
     } catch (error) {
       console.log(error);
       res.statusCode(500).send("error founded in Post");

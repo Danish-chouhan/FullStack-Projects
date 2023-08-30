@@ -1,12 +1,17 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 body {
   font-family: Arial, sans-serif;
   background-color: black;
+  font-family: "Poppins", sans-serif;
 }
 table {
   width: 100%;
   max-width: 800px;
   margin: 10px auto;
   color: white;
+  font-size: 13px;
   border-collapse: collapse;
 }
 th {
@@ -19,4 +24,13 @@ td {
   border: 1px solid #0dedd3;
   padding: 8px;
   text-align: left;
+}
+.MainContainer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+h1{
+  color: white;
 }

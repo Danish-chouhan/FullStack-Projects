@@ -15,7 +15,7 @@ app.post("/", async (req, res) => {
     const querys =
       "INSERT INTO SignUp(FullName,Email,Number,Password) VALUES (?,?,?,?)";
     await connection.query(querys, [FullName, Email, Number, encryptPass]);
-    res.redirect("/SignUpData");
+    res.redirect("/SuccesFullSubmited");
   } catch (error) {
     console.log(error);
     res.statusCode(500).send("error founded in Post");

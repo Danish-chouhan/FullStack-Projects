@@ -1,6 +1,6 @@
 const tableBody = document.getElementById("tableBody");
 
-fetch("http://localhost:4000/SignUp/SignUpData")
+fetch("http://localhost:5000/SignUp/SignUpData")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((item) => {
