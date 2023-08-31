@@ -1,5 +1,4 @@
 const tableBody = document.getElementById("tableBody");
-
 fetch("http://localhost:5000/Login/LoginData")
   .then((response) => response.json())
   .then((data) => {
@@ -9,9 +8,9 @@ fetch("http://localhost:5000/Login/LoginData")
       for (const property in item) {
         if (item.hasOwnProperty(property)) {
           const tableData = document.createElement("td");
-
+          
           tableData.textContent = item[property];
-
+          
           row.appendChild(tableData);
         }
       }
@@ -22,3 +21,4 @@ fetch("http://localhost:5000/Login/LoginData")
   .catch((error) => {
     console.error("Error fetching data:", error);
   });
+  
